@@ -1,4 +1,3 @@
-import { querapida } from '/public/image/querapida.png';
 
 export const projectsData = [
     {
@@ -19,7 +18,7 @@ export const projectsData = [
         role: 'Full Stack Developer',
         code: 'https://github.com/121189/c18-112-n-react-agregarback',
         demo: '',
-        image: querapida,
+        image: '',
     },
         {
       id: 3,
