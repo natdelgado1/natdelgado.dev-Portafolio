@@ -61,7 +61,7 @@ function ContactForm() {
       </p>
       <div className="max-w-3xl text-white rounded-lg border border-[#464c6a] p-3 lg:p-5">
         <p className="text-sm text-[#d3d8e8]">
-          {"Si tiene alguna pregunta o inquietud, no dude en ponerse en contacto conmigo. Estoy abierto a cualquier oportunidad de trabajo que se alinee con mis habilidades e intereses."}
+          {"Si tiene alguna pregunta o inquietud, no dude en ponerse en contacto conmigo. Estoy abierta a cualquier oportunidad de trabajo que se alinee con mis habilidades e intereses."}
         </p>
         <div className="mt-6 flex flex-col gap-4">
           <div className="flex flex-col gap-2">
