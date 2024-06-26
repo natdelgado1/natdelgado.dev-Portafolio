@@ -31,7 +31,7 @@ export const educations = [
     id: 5,
     title: "Operador Avanzado de Computadoras",
     duration: "Oct 2022 - Dic 2022",
-    institution: "INSTITUTO TÉCNICO SUPERIOR UNE-SN",
+    institution: "Intituto Técnico Superior UNE-SN",
     web: "/"
   }
 ]

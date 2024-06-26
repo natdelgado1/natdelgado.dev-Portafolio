@@ -20,8 +20,19 @@ export const projectsData = [
         demo: '',
         image: '',
     },
+    {
+            id: 3,
+        name: 'Sitio Web con CMS para Control GPS',
+        description:'Implementé un sistema de gestión de contenido (CMS) eficiente y funcional. Utilicé tecnologías como TypeScript, React.js, Node.js, Express y MongoDB para asegurar un rendimiento óptimo y un almacenamiento de datos eficaz. Mi contribución incluyó la integración de características dinámicas y la mejora de la experiencia del usuario, garantizando que el sitio sea robusto y fácil de mantener.',
+        role: 'Full Stack Developer',
+        tools: ['TypeScript', 'React.js', 'Node.js', 'Express', 'MongoDB', 'Trello'],
+        code: '' ,
+        demo: '',
+        image: '',
+
+    },
         {
-      id: 3,
+      id: 4,
         name: 'Todo List',
                 description: 'Aplicación web de lista de tareas con tecnologías MERN (MongoDB, Express, React, Node.js), Material UI y Tailwind. Funcionalidades: CRUD completo, autenticación con JWT, recuperación de contraseña, gestión de tareas con prioridades y comentarios, sidebar dinámico, vista de tareas pendientes y tabla interactiva.',
        tools: ['Node.js', 'Express', 'MongoDB', 'React', 'Material UI', 'Tailwind CSS', 'JWT', 'Nodemailer'],
@@ -31,7 +42,7 @@ export const projectsData = [
        image: '',
    },
     {
-        id: 4,
+        id: 5,
         name: 'E-commerce',
         description:["Desarrollé un E-commerce para una tienda de calzados utilizando Next.js, Node.js, MongoDB, React, Express.js, y Tailwind CSS. El proyecto incluye un catálogo de productos con filtrado por categoría, un sistema de registro y autenticación de usuarios, detalles de productos con imágenes y descripciones, y un carrito de compras. Implementé tecnologías avanzadas en el frontend y backend, asegurando una experiencia de compra óptima y personalizada para los usuarios."],
         tools:['Next.js', 'React.js', 'HTML', 'CSS', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'JavaScript', 'Git', 'Nodemailer', 'Trello'],
