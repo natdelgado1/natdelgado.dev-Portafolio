@@ -8,6 +8,8 @@ import './css/card.scss';
 import './css/globals.scss';
 import ScrollToTop from './components/helper/scroll-to-top';
 const inter = Inter({ subsets: ['latin'] });
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 
 export const metadata = {
   title: 'Portfolio de Natalia Delgado',
@@ -27,6 +29,7 @@ export default function RootLayout({ children }) {
         <Footer />
       </body>
       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM} />
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
     </html>
   )
 };
