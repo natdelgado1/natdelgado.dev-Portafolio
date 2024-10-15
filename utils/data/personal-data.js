@@ -13,5 +13,5 @@ export const personalData = {
   //stackOverflow: '',
   //leetcode: "",
   //devUsername: "",
-  resume: "https://drive.google.com/file/d/1M4jV1iYw2uaYjJxPQCq9xQ47-4VyrLmT/view?usp=sharing"
+  resume: "/CURRICULUM VITAE NATALIA DELGADO.pdf"
 }
