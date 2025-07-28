@@ -44,12 +44,12 @@ function ContactForm() {
     const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
     const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
     
-    // Debug en producción
-    console.log('=== DEBUG EN PRODUCCIÓN ===');
-    console.log('Service ID:', serviceID);
-    console.log('Template ID:', templateID);
-    console.log('Public Key:', publicKey);
-    console.log('Todas las variables NEXT_PUBLIC:', Object.keys(process.env).filter(key => key.startsWith('NEXT_PUBLIC_')));
+         // Debug en producción - V2
+     console.log('=== DEBUG EN PRODUCCIÓN V2 ===');
+     console.log('Service ID:', serviceID);
+     console.log('Template ID:', templateID);
+     console.log('Public Key:', publicKey);
+     console.log('Todas las variables NEXT_PUBLIC:', Object.keys(process.env).filter(key => key.startsWith('NEXT_PUBLIC_')));
     
     if (!publicKey) {
       toast.error('Error: Public key no encontrada. Verifica tu archivo .env');
