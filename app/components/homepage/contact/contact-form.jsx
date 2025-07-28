@@ -2,7 +2,7 @@
 // @flow strict
 import { isValidEmail } from '@/utils/check-email';
 import emailjs from '@emailjs/browser';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { TbMailForward } from "react-icons/tb";
 import { toast } from 'react-toastify';
 
@@ -17,6 +17,11 @@ function ContactForm() {
     required: false,
   });
 
+  // Inicializar EmailJS
+  useEffect(() => {
+    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+  }, []);
+
   const checkRequired = () => {
     if (input.email_id && input.message && input.from_name) {
       setError({ ...error, required: false });
@@ -25,6 +30,7 @@ function ContactForm() {
 
   const handleSendMail = async (e) => {
     e.preventDefault();
+    
     if (!input.email_id || !input.message || !input.from_name) {
       setError({ ...error, required: true });
       return;
@@ -36,13 +42,18 @@ function ContactForm() {
 
     const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
     const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const options = { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY };
-
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+    
+    if (!publicKey) {
+      toast.error('Error: Public key no encontrada. Verifica tu archivo .env');
+      return;
+    }
+    
     try {
-      const res = await emailjs.send(serviceID, templateID, input, options);
+      const res = await emailjs.send(serviceID, templateID, input, publicKey);
 
       if (res.status === 200) {
-        toast.success('Message sent successfully!');
+        toast.success('¡Mensaje enviado exitosamente!');
         setInput({
           from_name: '',
           email_id: '',
@@ -50,7 +61,8 @@ function ContactForm() {
         });
       };
     } catch (error) {
-      toast.error(error?.text || error);
+      console.error('Error sending email:', error);
+      toast.error('Error al enviar el mensaje. Inténtalo de nuevo.');
     };
   };
 
@@ -63,7 +75,7 @@ function ContactForm() {
         <p className="text-sm text-[#d3d8e8]">
           {"Si tiene alguna pregunta o inquietud, no dude en ponerse en contacto conmigo. Estoy abierta a cualquier oportunidad de trabajo que se alinee con mis habilidades e intereses."}
         </p>
-        <div className="mt-6 flex flex-col gap-4">
+        <div className="flex flex-col gap-4 mt-6">
           <div className="flex flex-col gap-2">
             <label className="text-base">Tu Nombre: </label>
             <input
@@ -73,7 +85,7 @@ function ContactForm() {
               required={true}
               onChange={(e) => setInput({ ...input, from_name: e.target.value })}
               onBlur={checkRequired}
-              value={input.name}
+              value={input.from_name}
             />
           </div>
 
@@ -109,10 +121,10 @@ function ContactForm() {
               value={input.message}
             />
           </div>
-          <div className="flex flex-col items-center gap-2">
+          <div className="flex flex-col gap-2 items-center">
             {error.required &&
               <p className="text-sm text-red-400">
-                Email and Message are required!
+                Nombre, Email y Mensaje son requeridos!
               </p>
             }
             <button
